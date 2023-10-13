@@ -118,8 +118,8 @@ next.onclick = () => {
   getData(URL, parmas);
 };
 
-search.onchange = () => {
+search.addEventListener("input", () => {
   queryParams.search = search.value;
   let parmas = new URLSearchParams(queryParams);
   getData(URL, parmas);
-};
+});

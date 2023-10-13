@@ -3,17 +3,19 @@ let firstdate = document.getElementById("firstdate");
 let seconddate = document.getElementById("seconddate");
 let data = new Array();
 
-firstdate.onchange = () => {
+firstdate.addEventListener("input", () => {
   queryParams.start_date = firstdate.value;
+  console.log(firstdate.value);
   let parmas = new URLSearchParams(queryParams);
   getData(URL, parmas);
-};
+});
 
-seconddate.onchange = () => {
+seconddate.addEventListener("input", () => {
   queryParams.end_date = seconddate.value;
+  console.log(seconddate.value);
   let parmas = new URLSearchParams(queryParams);
   getData(URL, parmas);
-};
+});
 
 let queryParams = {
   page: 1,
